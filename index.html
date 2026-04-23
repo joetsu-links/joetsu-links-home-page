@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOETSU LINKS | 上越市のイベント・コミュニティ</title>
+  <meta name="description" content="イベントを通じて、上越市で人と人、人と企業を繋げる。体験イベント・草刈りサービス・ランニングコミュニティ。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #bf0f3e;
+      --navy: #1a2240;
+      --white: #ffffff;
+      --off-white: #f8f7f5;
+      --gray-light: #eeecea;
+      --gray-mid: #999;
+      --gray-text: #333;
+      --green-line: #06c755;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--off-white);
+      color: var(--gray-text);
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--white);
+      border-bottom: 3px solid var(--red);
+      padding: 2rem 1.5rem 1.75rem;
+      text-align: center;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ロゴ画像を使う場合はこちらを有効にし、テキストロゴをコメントアウト */
+    /* .logo-img { width: 160px; height: auto; margin-bottom: 0.5rem; } */
+
+    .logo-j {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 56px;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .logo-joetsu {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--red);
+      letter-spacing: 6px;
+      line-height: 1.1;
+    }
+
+    .logo-links {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--navy);
+      letter-spacing: 6px;
+      line-height: 1.1;
+    }
+
+    .logo-kana {
+      font-size: 11px;
+      color: var(--gray-mid);
+      letter-spacing: 8px;
+      margin-top: 4px;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 2.1;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-top: 0.5px solid var(--gray-light);
+    }
+
+    .section:first-of-type {
+      border-top: none;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid var(--red);
+      padding-bottom: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--gray-text);
+    }
+
+    /* ─── SERVICES ─── */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .services {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .svc {
+      border: 0.5px solid var(--gray-light);
+      border-radius: 10px;
+      padding: 1.25rem 0.75rem;
+      text-align: center;
+      background: var(--white);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .svc:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    .svc-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 26px;
+    }
+
+    .svc-icon-cake  { background: #fff0f5; }
+    .svc-icon-grass { background: #f0fff4; }
+    .svc-icon-run   { background: #f0f4ff; }
+
+    .svc-tag {
+      display: inline-block;
+      font-size: 10px;
+      color: var(--red);
+      border: 0.5px solid var(--red);
+      border-radius: 3px;
+      padding: 2px 6px;
+      margin-bottom: 7px;
+    }
+
+    .svc-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .svc-desc {
+      font-size: 11px;
+      color: var(--gray-mid);
+      line-height: 1.8;
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: var(--off-white);
+      border-top: 0.5px solid var(--gray-light);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .cta-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      line-height: 1.9;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 400px) {
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cta-card {
+      background: var(--white);
+      border: 0.5px solid var(--gray-light);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+
+    .cta-card-lbl {
+      font-size: 11px;
+      color: var(--gray-mid);
+      margin-bottom: 8px;
+    }
+
+    .btn-line {
+      display: block;
+      background: var(--green-line);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Noto Sans JP', sans-serif;
+      padding: 11px 8px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .btn-line:hover {
+      opacity: 0.88;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-tel-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 6px;
+    }
+
+    .footer-tel {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: var(--white);
+    }
+
+    .footer-tel a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-divider {
+      width: 32px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 1.25rem auto;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ─── FADE IN ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header, .section, .cta-section, footer {
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.1s; }
+    .section:nth-of-type(2) { animation-delay: 0.2s; }
+    .cta-section            { animation-delay: 0.3s; }
+    footer                  { animation-delay: 0.35s; }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー / ヒーロー -->
+  <header>
+    <div class="logo-wrap">
+      <!-- ロゴ画像がある場合はこちら（logo.jpgをindex.htmlと同じフォルダに置く） -->
+      <!-- <img src="logo.jpg" alt="JOETSU LINKS" class="logo-img"> -->
+
+      <!-- テキストロゴ（ロゴ画像が揃ったら上のimgタグに切り替え） -->
+      <span class="logo-j">J</span>
+      <span class="logo-joetsu">JOETSU</span>
+      <span class="logo-links">LINKS</span>
+      <span class="logo-kana">リ ン ク ス</span>
+    </div>
+    <p class="hero-tagline">
+      イベントを通じて、<br>
+      上越市で人と人、人と企業を繋げる
+    </p>
+  </header>
+
+  <!-- About -->
+  <div class="section">
+    <span class="section-label">About</span>
+    <p class="about-text">
+      上越市を拠点に、体験型イベント・ランニング・草刈りサービスを通じて地域のつながりをつくります。<br>
+      まずは公式LINEからお気軽にご連絡ください。
+    </p>
+  </div>
+
+  <!-- Services -->
+  <div class="section">
+    <span class="section-label">Services</span>
+    <div class="services">
+
+      <div class="svc">
+        <div class="svc-icon svc-icon-cake">🧁</div>
+        <span class="svc-tag">体験イベント</span>
+        <div class="svc-name">お菓子作り<br>ワークショップ</div>
+        <div class="svc-desc">月1開催<br>初心者歓迎</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon svc-icon-grass">🌿</div>
+        <span class="svc-tag">サービス</span>
+        <div class="svc-name">草刈り</div>
+        <div class="svc-desc">10,000円〜<br>見積り無料<br>立ち会い不要</div>
+      </div>
+
+      <div class="svc">
+        <div class="svc-icon svc-icon-run">🏃‍♀️</div>
+        <span class="svc-tag">コミュニティ</span>
+        <div class="svc-name">ランニング</div>
+        <div class="svc-desc">上越ランニング<br>チーム構想中</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LINE CTA -->
+  <div class="cta-section">
+    <p class="cta-lead">LINEからお気軽にお問い合わせください</p>
+    <div class="cta-grid">
+
+      <div class="cta-card">
+        <p class="cta-card-lbl">イベント・最新情報</p>
+        <!-- ↓ href="" の中にイベント用LINE URLを入れる -->
+        <a href="" class="btn-line" target="_blank" rel="noopener">イベントLINEに登録</a>
+      </div>
+
+      <div class="cta-card">
+        <p class="cta-card-lbl">草刈り・業務依頼</p>
+        <!-- ↓ href="" の中に草刈り用LINE URLを入れる -->
+        <a href="" class="btn-line" target="_blank" rel="noopener">草刈りLINEに登録</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <p class="footer-tel-label">お電話でのお問い合わせ</p>
+    <p class="footer-tel"><a href="tel:08010508173">080-1050-8173</a></p>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">© 2025 JOETSU LINKS</p>
+  </footer>
+
+</body>
+</html>
